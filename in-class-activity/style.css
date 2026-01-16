@@ -1,0 +1,64 @@
+body {
+    background-color: rgb(255, 255, 250)
+}
+
+header {
+    display: flex;
+    background-color: rgb(58, 113, 41)
+}
+
+.profile-photo {
+    flex: 1;
+    padding: 20px;
+}
+
+.headerTextC {
+    flex: 2;
+    padding: 30px;
+}
+
+.section-text {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav {
+    background-color: lightgray;
+}
+
+nav a {
+    margin: 20px;
+    color:cornflowerblue
+}
+
+table {
+    height: 250px;
+}
+
+td,
+th {
+    border: 2px, solid, black;
+    padding: 4px;
+}
+
+th {
+    background-color: rgb(58, 113, 41);
+    color: ivory;
+}
+
+.container {
+    display: flex;
+}
+
+.leftS {
+    flex: 2;
+    background-color: ivory;
+    padding: 20px;
+}
+
+.rightS {
+    flex: 1;
+    background-color:black;
+    color: ivory;
+    margin-left: 12px;
+    padding-left: 20px
+}
