@@ -1,0 +1,72 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms Example</title>
+    <link rel="stylesheet" href="/html_forms/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Weber State University</h1>
+        <h3>School of Computing</h3>
+    </header>
+
+
+    <main>
+        <!--div or section are ways to section off your page.
+         If there's no actual meaning to have elements together, use div.
+          If they are related, use section-->
+
+        <section class="Cwelcome">
+            <p>Welcome to Weber State University! This is the EAST homepage.<br>
+                Higher education doesn't have to break the bank.</p>
+        </section>
+
+        <form>
+            <section class="CpersonalInfo">
+                <label for="studNm">Student Name:</label> <!--The "for" isn't technically necessary, but good practice.-->
+                <input type="text" name="studNm">
+                <br>
+                <label for="studEm">Student Email:</label>
+                <input type="text" name="studEm">
+
+                <label>Select Program</label>
+                <select>
+                    <option>--None Selected--</option>
+                    <option>Computer Science</option>
+                    <option>Web Development</option>
+                    <option>Cybersecurity</option>
+                </select>
+            </section>
+<br><br>
+            <div class="Cflex">
+                <section class="Ccourses">
+                    <label>Choose which courses you'd like to take:</label><br>
+                    <input type="checkbox"> <label>Visual Programming</label><br>
+                    <input type="checkbox"> <label>Intro to Computer Science</label><br>
+                    <input type="checkbox"> <label>Client Side Programming</label><br>
+                    <input type="checkbox"> <label>Data Structures & Algorithms</label><br>
+                </section>
+                <section class="CschoolYear">
+                    <label>Select your current year status:</label><br>
+                    <input type="radio" name="year"> <label>Freshman</label><br>
+                    <input type="radio" name="year"> <label>Sophomore</label><br>
+                    <input type="radio" name="year"> <label>Junior</label><br>
+                    <input type="radio" name="year"> <label>Senior</label><br> 
+                    <!--These need the same name so you can't select more than 1-->
+                </section>
+            </div>
+            <section class="Ccomment">
+
+            </section>
+        </form>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>

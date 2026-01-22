@@ -1,0 +1,33 @@
+header {
+    text-align: center;
+    background-color: rgb(124, 0, 186);
+    color: white;
+    padding: 2px;
+}
+
+.Cflex {
+    display: flex;
+}
+
+.Ccourses, .CschoolYear {
+    flex: 1;
+    border: 1px, solid, black;
+    margin: 5px;
+    padding: 10px;
+}
+
+main {
+    background-color:rgb(253, 245, 255);
+    margin-top: 4px;
+}
+
+.Cwelcome {
+    padding: 10px;
+    font-size: 20px;
+}
+
+
+.CpersonalInfo input {
+    margin: 5px;
+}
+
