@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Days Until Graduation</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Graduation Countdown</h1>
+    <p id="tagline">Counting down to the day I'm all dressed in purple!</p>
+  </header>
+
+  <!-- Main Content -->
+  <div id="countdown-box" class="countdown-box">
+    <h2>Time Until Graduation</h2>
+
+    <div id="countdown" class="countdown">
+
+        <p><span id="days">0</span> Days</p>
+        <p><span id="hours">0</span> Hours</p>
+
+
+        <p><span id="minutes">0</span> Minutes</p>
+        <p><span id="seconds">0</span> Seconds</p>
+
+    </div>
+  </div>
+
+  <!-- Personal Message Section -->
+  <section id="message">
+    <h2>My Graduation Goal</h2>
+    <p>I plan to graduate from Weber State University with a bachelors degree in Computer Science. My expected graduation date is December 2027.</p>
+  </section>
+
+  <!-- Optional Image Section -->
+  <section id="photo-section" class="photo-section">
+    <img
+      src="https://scontent-sea1-1.xx.fbcdn.net/v/t39.30808-6/585342589_1522106429003549_5357391500697292563_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=iDe1G9Vqw88Q7kNvwEHferW&_nc_oc=AdmHyTe-c5_EcZ4iUEcHRdxl6nXsCur8XWYjoWscaIBR5TBvQHJhptqlkydgZvYKLf8&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=gLK2SNrfqgUDnX5cq__twQ&oh=00_Afr1co5BT65CPRtu8oWEJpuFePZb-jXPju-MphMM6_p2RQ&oe=697982E4"
+      alt="Professional pic of Ty" width="150">
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Ty Burningham - Graduation Countdown</p>
+  </footer>
+
+  <!-- Countdown Script -->
+  <script>
+    // Set your graduation date here
+    const graduationDate = new Date("December 10, 2027 10:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = graduationDate - now;
+
+      document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+      document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+    }
+
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+
+</html>
