@@ -26,7 +26,8 @@
 
         <form>
             <section class="CpersonalInfo">
-                <label for="studNm">Student Name:</label> <!--The "for" isn't technically necessary, but good practice.-->
+                <label for="studNm">Student Name:</label>
+                <!--The "for" isn't technically necessary, but good practice.-->
                 <input type="text" name="studNm">
                 <br>
                 <label for="studEm">Student Email:</label>
@@ -40,7 +41,7 @@
                     <option>Cybersecurity</option>
                 </select>
             </section>
-<br><br>
+            <br><br>
             <div class="Cflex">
                 <section class="Ccourses">
                     <label>Choose which courses you'd like to take:</label><br>
@@ -54,18 +55,26 @@
                     <input type="radio" name="year"> <label>Freshman</label><br>
                     <input type="radio" name="year"> <label>Sophomore</label><br>
                     <input type="radio" name="year"> <label>Junior</label><br>
-                    <input type="radio" name="year"> <label>Senior</label><br> 
+                    <input type="radio" name="year"> <label>Senior</label><br>
                     <!--These need the same name so you can't select more than 1-->
                 </section>
             </div>
             <section class="Ccomment">
-
+                <label>Additional Comments:</label><br>
+                <textarea rows="4" cols="50"></textarea>
             </section>
+            <div class="endButtons">
+                <section class="Csubmit">
+                    <input type="submit" value="Submit">
+                </section>
+                <section class="Creset">
+                    <input type="reset" value="Reset">
+            </div>
         </form>
     </main>
 
     <footer>
-
+        <p>© 2026 Ty Burningham | <a href="https://www.weber.edu">Weber State University </a></p>
     </footer>
 </body>
 

@@ -3,13 +3,15 @@ header {
     background-color: rgb(124, 0, 186);
     color: white;
     padding: 2px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 .Cflex {
     display: flex;
 }
 
-.Ccourses, .CschoolYear {
+.Ccourses,
+.CschoolYear {
     flex: 1;
     border: 1px, solid, black;
     margin: 5px;
@@ -17,7 +19,7 @@ header {
 }
 
 main {
-    background-color:rgb(253, 245, 255);
+    background-color: rgb(253, 245, 255);
     margin-top: 4px;
 }
 
@@ -26,8 +28,49 @@ main {
     font-size: 20px;
 }
 
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: rgb(124, 0, 186);
+}
 
 .CpersonalInfo input {
     margin: 5px;
 }
 
+.endButtons {
+    display: flex;
+    justify-content: left;
+    margin: 10px;
+}
+
+.Csubmit,
+.Creset {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.Csubmit:hover,
+.Creset:hover {
+    background-color: rgb(152, 1, 228);
+    cursor: pointer;
+}
+
+.endButtons input {
+    color: white;
+    background-color: rgb(124, 0, 186);
+    width: 80px
+}
+
+footer {
+    text-align: center;
+    background-color: rgb(124, 0, 186);
+    color: white;
+    padding: 5px;
+    margin-top: 4px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
