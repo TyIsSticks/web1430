@@ -1,0 +1,25 @@
+.countdown{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.5em;
+    margin-top: 20px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: 5px, outset,  aliceblue;
+    border-radius: 25px;
+    background-color:rgb(80, 15, 15)
+}
+
+.photo-section img {
+    display: flex;
+    border: hidden;
+    border-radius: 50%;
+}
+
+body {
+    background-color:rgb(114, 25, 25);
+    color:aliceblue;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+}
+
