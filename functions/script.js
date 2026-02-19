@@ -90,8 +90,8 @@
 // }
 
 //prompt the user until they enter a number greater than 100
-let userInput;
-do {
-    userInput = Number(prompt("Enter a number greater than 100:"));
-} while (userInput <= 100);
-alert("You win!");
+// let userInput;
+// do {
+//     userInput = Number(prompt("Enter a number greater than 100:"));
+// } while (userInput <= 100);
+// alert("You win!");

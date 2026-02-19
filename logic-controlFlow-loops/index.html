@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Text Input Example</title>
+</head>
+
+<body>
+
+    <h2 id="header2">Enter Your Name</h2>
+
+    <input type="text" id="username" placeholder="Enter your name">
+    <button onclick="showName()">Click this</button>
+
+    <p id="output"></p>
+
+    <script>
+        function showName() {
+            let name = document.getElementById("username").value;
+            document.getElementById("output").innerHTML =
+                "Hello, " + name + "!";
+            // document is the webpage,
+            //  getElementById is a method that finds an element with the specified id,
+            //  and .value gets the value of that element (in this case, the text input).
+            // Then we set the innerHTML of the output paragraph to display a greeting with the name entered by the user.
+            document.getElementById("header2").innerHTML = "Thank you!";
+            document.getElementById("username").value = "W o w";
+        }
+
+    </script>
+
+<h2>Select Gender</h2>
+
+<input type="radio" name="gender" value="Male"> Male
+<input type="radio" name="gender" value="Female"> Female
+
+
+<br><br>
+<button onclick="getGender()">Submit</button>
+
+<p id="radioOutput"></p>
+
+<script>
+function getGender() {
+    let selected = document.querySelector('input[name="gender"]:checked'); // querySelector uses '' vs getElementById which uses ""
+
+    if (selected) {
+        document.getElementById("radioOutput").innerHTML =
+            "Selected Gender: " + selected.value;
+    } else {
+        document.getElementById("radioOutput").innerHTML =
+            "No option selected.";
+    }
+}
+</script>
+
+</body>
+
+</html>
