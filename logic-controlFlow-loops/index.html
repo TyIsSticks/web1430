@@ -12,12 +12,12 @@
     <input type="text" id="username" placeholder="Enter your name">
     <button onclick="showName()">Click this</button>
 
-    <p id="output"></p>
+    <p id="output" class="Ctest">Output here</p>
 
     <script>
         function showName() {
-            let name = document.getElementById("username").value;
-            document.getElementById("output").innerHTML =
+            let name = document.getElementById("username").value; // add [0] because getElementsByClassName returns a collection (array-like) of elements, even if there's only one match. We want the first (and in this case, only) element in that collection.
+            document.getElementbyClassName("Ctest").innerHTML =
                 "Hello, " + name + "!";
             // document is the webpage,
             //  getElementById is a method that finds an element with the specified id,
@@ -29,30 +29,30 @@
 
     </script>
 
-<h2>Select Gender</h2>
+    <h2>Select Gender</h2>
 
-<input type="radio" name="gender" value="Male"> Male
-<input type="radio" name="gender" value="Female"> Female
+    <input type="radio" name="gender" value="Male"> Male
+    <input type="radio" name="gender" value="Female"> Female
 
 
-<br><br>
-<button onclick="getGender()">Submit</button>
+    <br><br>
+    <button onclick="getGender()">Submit</button>
 
-<p id="radioOutput"></p>
+    <p id="radioOutput"></p>
 
-<script>
-function getGender() {
-    let selected = document.querySelector('input[name="gender"]:checked'); // querySelector uses '' vs getElementById which uses ""
+    <script>
+        function getGender() {
+            let selected = document.querySelector('input[name="gender"]:checked'); // querySelector uses '' vs getElementById which uses ""
 
-    if (selected) {
-        document.getElementById("radioOutput").innerHTML =
-            "Selected Gender: " + selected.value;
-    } else {
-        document.getElementById("radioOutput").innerHTML =
-            "No option selected.";
-    }
-}
-</script>
+            if (selected) {
+                document.getElementById("radioOutput").innerHTML =
+                    "Selected Gender: " + selected.value;
+            } else {
+                document.getElementById("radioOutput").innerHTML =
+                    "No option selected.";
+            }
+        }
+    </script>
 
 </body>
 
