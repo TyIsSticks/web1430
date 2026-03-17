@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selecting</title>
+</head>
+
+<body>
+    <h2>Input your name: </h2>
+    <input type="text" id="name" placeholder="Enter your name">
+
+    <h2>Select Hobbies</h2>
+    <input type="checkbox" name="hobby" value="Reading"> Reading<br>
+    <input type="checkbox" name="hobby" value="Traveling"> Traveling<br>
+    <input type="checkbox" name="hobby" value="Cooking"> Cooking<br>
+    <input type="checkbox" name="hobby" value="Sports"> Sports<br>
+
+    <select id="colors">
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        <option value="black">Black</option>
+    </select>
+
+    <button onclick="getSelectedHobbies()">Get Selected Hobbies</button>
+
+    <script>
+        let p = document.createElement("p");
+
+        document.getElementById("colors").addEventListener("change", function () {
+            p.style.color = this.value;
+        });
+
+        function getSelectedHobbies() {
+            const hobbies = document.querySelectorAll('input[name="hobby"]:checked');
+            let summary = "";
+            hobbies.forEach(function (hobby) {
+                summary += hobby.value + ",";
+            })
+            summary = summary.substr(0, summary.length - 1);
+            document.getElementById("name").value ? p.textContent = document.getElementById("name").value + "'s Hobbies:\n" + summary :
+            p.textContent = "Selected Hobbies:\n" + summary;
+            document.body.appendChild(p);
+
+            // const selectedHobbies = Array.from(checkboxes).map(checkbox => checkbox.value);
+            // alert("Selected Hobbies: " + selectedHobbies.join(", "));
+        }
+    </script>
+
+</body>
+
+</html>

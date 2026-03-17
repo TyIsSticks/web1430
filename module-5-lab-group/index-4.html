@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DOM Lab: Time Slot Picker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 16px;
+      align-items: start;
+      max-width: 900px;
+    }
+
+    select {
+      width: 100%;
+      min-height: 220px;
+      padding: 8px;
+    }
+
+    .btns {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    button {
+      padding: 10px 12px;
+      cursor: pointer;
+    }
+
+    .panel {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    .userMessage {
+      margin-top: 12px;
+      min-height: 22px;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 10px 16px;
+      max-width: 520px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>DOM Practice: Time Slot Picker</h1>
+  <p>Select a time slot and move it between lists. Use the controls to change page style.</p>
+
+  <div class="grid">
+    <div class="panel">
+      <h3>Available Time Slots</h3>
+      <select id="available" size="8" multiple>
+        <option value="09:00 AM">09:00 AM</option>
+        <option value="09:30 AM">09:30 AM</option>
+        <option value="10:00 AM">10:00 AM</option>
+        <option value="10:30 AM">10:30 AM</option>
+        <option value="11:00 AM">11:00 AM</option>
+        <option value="11:30 AM">11:30 AM</option>
+        <option value="12:00 PM">12:00 PM</option>
+        <option value="12:30 PM">12:30 PM</option>
+      </select>
+    </div>
+
+    <div class="btns">
+      <button id="addition">Add &gt;&gt;</button>
+      <button id="removeBtn">&lt;&lt; Remove</button>
+    </div>
+
+    <div class="panel">
+      <h3>Selected Time Slots</h3>
+      <select id="selected" size="8"></select>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:16px;">
+    <h3>Style Controls</h3>
+    <div class="controls">
+      <label for="bgColor">Background color</label>
+      <input type="color" id="bgColor" value="#ffffff" />
+
+      <label for="textColor">Text color</label>
+      <input type="color" id="textColor" value="#111111" />
+
+      <label for="fontSize">Font size (optional)</label>
+      <input type="range" id="fontSize" min="14" max="28" value="16" />
+    </div>
+
+    <div class="userMessage" id="userMessage" aria-live="polite"></div>
+  </div>
+
+  <script>
+    //  1) Get elements by id
+    const availableSelect = document.getElementById('available');
+    const selectedSelect = document.getElementById('selected');
+    const addition = document.getElementById('addition');
+    const removeBtn = document.getElementById('removeBtn');
+    const bgColorInput = document.getElementById('bgColor');
+    const textColorInput = document.getElementById('textColor');
+    const fontSizeInput = document.getElementById('fontSize');
+    const userMessage = document.getElementById('userMessage');
+
+    function styleInteractiveControls(propertyName, value) {
+      const controls = document.querySelectorAll('select, button');
+      controls.forEach((control) => {
+        control.style[propertyName] = value;
+      });
+    }
+    //  2) Add click handlers for Add/Remove
+    addition.addEventListener('click', () => {
+      if (availableSelect.options.length === 0) {
+        userMessage.textContent = "No available time slots to add.";
+        alert(userMessage.textContent);
+        return;
+      }
+
+      const selectedIndex = availableSelect.selectedIndex;
+      if (selectedIndex === -1) {
+        userMessage.textContent = "Please select a time slot to add.";
+        alert(userMessage.textContent);
+        return;
+      }
+
+      const option = availableSelect.options[selectedIndex];
+      selectedSelect.add(option);
+      userMessage.textContent = `Added ${option.value} to selected slots.`;
+    });
+
+    removeBtn.addEventListener('click', () => {
+      if (selectedSelect.options.length === 0) {
+        userMessage.textContent = "No selected time slots to remove.";
+        alert(userMessage.textContent);
+        return;
+      }
+
+      const selectedIndex = selectedSelect.selectedIndex;
+      if (selectedIndex === -1) {
+        userMessage.textContent = "Please select a time slot to remove.";
+        alert(userMessage.textContent);
+        return;
+      }
+
+      const option = selectedSelect.options[selectedIndex];
+      availableSelect.add(option);
+      userMessage.textContent = `Removed ${option.value} from selected slots.`;
+    });
+
+    //  3) Move selected option between lists
+    bgColorInput.addEventListener('change', (e) => {
+      const newBg = e.target.value;
+      document.body.style.backgroundColor = newBg;
+      styleInteractiveControls('backgroundColor', newBg);
+    });
+
+    textColorInput.addEventListener('change', (e) => {
+      const newTextColor = e.target.value;
+      document.body.style.color = newTextColor;
+      styleInteractiveControls('color', newTextColor);
+    });
+
+    fontSizeInput.addEventListener('input', (e) => {
+      const newFontSize = e.target.value + 'px';
+      document.body.style.fontSize = newFontSize;
+      styleInteractiveControls('fontSize', newFontSize);
+    });
+
+    //  4) Add style control listeners (bg, text, font size)
+    // Initialize with current values
+    userMessage.textContent = "Ready to pick time slots!";
+
+    // Hints:
+    // - availableSelect.selectedIndex gives the chosen option index
+    // - availableSelect.options[availableSelect.selectedIndex] is the <option>
+    // - selectedSelect.add(option) moves an existing option
+    // - userMessage.textContent = "..." to show feedback
+  </script>
+</body>
+
+</html>
