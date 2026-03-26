@@ -24,7 +24,10 @@ let box3 = document.querySelector("#box3");
 box3.addEventListener("dblclick", changeBoxColor); // double-click event listener for box3
 
 let box4 = document.querySelector("#box4");
-box4.addEventListener("contextmenu", changeBoxColor);;
+box4.addEventListener("oncontextmenu", changeBoxColor); // right-click event listener for box4
 
 let box5 = document.querySelector("#box5");
-box5.addEventListener("click", changeBoxColor); // mouseover event listener for box5
+    box5.addEventListener("click", function (event) {
+        console.log(`Mouse clicked at: (${event.clientX}, ${event.clientY})`);  // Send x and y coordinates of the mouse click to the console
+    })
+

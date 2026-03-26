@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Event Playground</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            line-height: 1.5;
+        }
+
+        section {
+            border: 1px solid #ccc;
+            padding: 16px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        #mouseBox {
+            width: 300px;
+            height: 140px;
+            border: 2px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            user-select: none;
+        }
+
+        #log {
+            background: #f7f7f7;
+            padding: 10px;
+            min-height: 80px;
+            border-radius: 6px;
+            white-space: pre-line;
+        }
+
+        .status {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JavaScript Event Playground</h1>
+
+    <section>
+        <h2>1. Mouse Events</h2>
+        <p>Interact with the box below.</p>
+        <div id="mouseBox">Move the mouse here</div>
+        <p>Clicks: <span id="clickCount">0</span></p>
+        <p>Mouse position: <span id="coords">x: -, y: -</span></p>
+    </section>
+
+    <section>
+        <h2>2. Keyboard Events</h2>
+        <label for="keyInput">Type in this input box:</label><br />
+        <input id="keyInput" type="text" placeholder="Press keys here" />
+        <p>Last key: <span id="lastKey">-</span></p>
+        <p>Last code: <span id="lastCode">-</span></p>
+        <p>Status: <span id="keyStatus">Waiting...</span></p>
+        <p>To-do List (type and press Enter):</p>
+        <ul id="todoList"></ul>
+    </section>
+
+    <section>
+        <h2>3. Load Events</h2>
+        <p id="domStatus">DOM status: waiting...</p>
+        <p id="pageStatus">Page status: waiting...</p>
+        <img id="sampleImg"
+            src="https://hips.hearstapps.com/hmg-prod/images/gettyimages-150327735-copy.jpg?resize=1024:*"
+            alt="Placeholder image" style="width: 150px;" />
+        <p id="imgStatus">Image status: waiting...</p>
+    </section>
+
+    <section>
+        <h2>Event Log</h2>
+        <div id="log">See console log</div>
+    </section>
+
+    <section>
+        <h2>4. Timing Events</h2>
+        <p>Use the buttons below to start and stop timers.</p>
+
+        <button id="startTimeout">Start Timeout</button>
+        <button id="startInterval">Start Interval</button>
+        <button id="stopInterval">Stop Interval</button>
+
+        <p>Timeout Message: <span id="timeoutMsg">Waiting...</span></p>
+        <p>Interval Counter: <span id="intervalCount">0</span></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
